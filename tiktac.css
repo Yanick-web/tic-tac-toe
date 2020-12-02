@@ -19,7 +19,7 @@ body{
     display: flex;
     flex-flow: row wrap;
     border: 1px solid aqua;
-    height: 80vh;
+    height: 85vh;
     width: 50%;
     padding: 1rem;
     overflow: hidden;
@@ -30,12 +30,13 @@ body{
     display: grid;
     grid-template-columns: auto auto auto;
     border: 1px solid aqua;
-    height: 90%;
+    height: 85%;
     width: 100%;
     overflow: hidden;
     margin-top: .5rem;
     padding: 3px;
     border-radius: 5px;
+    overflow-x: auto;
 }
 .game div{
     border:1px solid aqua;
@@ -48,6 +49,7 @@ body{
     font-size: 5em;
     background-color: white;
     transition: .2s ease-in;
+    
 
 }
 .game div:hover{
@@ -114,11 +116,13 @@ body{
 
 .win h1{
     font-weight: bold;
-    font-size: 6em;
+    font-size: 5em;
+    width: 100%;
+    height: 30%;
     color: aqua;
     transition: all .2s ease-in;
     text-align: center;
-    padding-left: 12rem;
+    overflow: hidden;
 }
 .win button{
 outline: none;
@@ -127,14 +131,15 @@ border: none;
 background-color: aqua;
 padding: .5rem;
 font-weight: bold;
-font-size: 1.5em;
+font-size: 1em;
 transition: all .5s ease-in-out;
 }
 
 .win p{
     color: aqua;
     font-weight: bold;
-    font-size: 2em;
+    font-size: 1em;
+    margin-bottom: 5px;
     transition: all .5s ease-in-out;
 
 }
@@ -172,4 +177,5 @@ h1{
     top: 0;
     left: 0;
     color: aqua;
+    z-index: -10;
 }
