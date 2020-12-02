@@ -4,9 +4,17 @@ const start = document.querySelector('.start-game');
 const player_X = document.querySelector('.x-tac');
 const x_span = document.querySelector('.x-tac span')
 const player_O = document.querySelector('.o-tac');
+const xWinSpan = document.querySelector('#xwin');
+const oWinSpan = document.querySelector('#owin');
+const draws = document.querySelector('#draw');
+
 let content;
 let  P1 = false, P2 = false;
 let color;
+let xa = []; // tracks x wins
+let oa = []; // tracks o wins
+let da = []; // tracks draws
+
 
 
 // TAC EVENT HANDLERS
@@ -33,14 +41,40 @@ for ( let box of boxes){
     box.addEventListener('click', function(){
         this.style.backgroundColor = color;
         this.textContent = content;
-        
+
         checkForWin();
-        let player = checkForWin();
+
+let player = checkForWin();
+
+if(player=== 'X'){
+xa.push(player);
+
+} 
+
+if(player=== 'O'){
+oa.push(player);
+
+} 
+
+if(player=== 'none'){
+da.push('n');
+
+} 
+
         displayWin(player);
 
     });
 }
 
+//updating scores
+setInterval(() => {
+    let numb1 = xa.length;
+    let numb2 = oa.length;
+    let numb3 = da.length;
+    xWinSpan.textContent = `X = ${numb1}`;
+    oWinSpan.textContent = `O = ${numb2}`;
+    draws.textContent = `Draws = ${numb3}`;
+}, 500);
 
 //functions
 function checkForWin(){
@@ -312,6 +346,10 @@ function displayWin(player){
 function resetGame(){
     P1 = P2 = false;
     color = 'white';
+
+xWinSpan.textContent = `X = ${xa.length}`;
+oWinSpan.textContent = `O = ${oa.length}`;
+draws.textContent = `Draws = ${da.length}`;
         boxes.forEach(function(box) {
         box.textContent = '-';
         box.style.backgroundColor = color;
@@ -319,5 +357,3 @@ function resetGame(){
     });
 
 }
-
-

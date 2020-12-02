@@ -172,10 +172,125 @@ transition: all .5s ease-in-out;
     }
 }
 
-h1{
+.title{
     position: fixed;
     top: 0;
     left: 0;
     color: aqua;
     z-index: -10;
+}
+
+.score{
+     position: fixed;
+    top: 0;
+    right: 0;
+    color: aqua;
+    z-index: -10;
+}
+
+/*RESPOSIVENES BELOW*/
+
+@media screen and (max-width: 784px){
+    .game-container{
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid aqua;
+    height: 85vh;
+    margin-top: 2rem;
+    width: 100%;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 5px;
+    }
+    .game{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    border: 1px solid aqua;
+    height: 85%;
+    width: 100%;
+    overflow: hidden;
+    margin-top: .5rem;
+    padding: 3px;
+    border-radius: 5px;
+    overflow-x: auto;
+    }
+    .game div{
+    border:1px solid aqua;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin: 3px;
+    font-size: 5em;
+    background-color: white;
+    transition: .2s ease-in;
+    
+
+}
+    .title{
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 20px;
+    margin-bottom: 50px;
+    color: aqua;
+    z-index: -10;
+    }
+    .score{
+    position: fixed;
+    font-size: 20px;
+    top: 5%;
+    left: 0;
+    color: aqua;
+    z-index: -10;
+    }
+
+    .win{
+    position: absolute;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 80%;
+    background-color: rgba(0,0,0,0.7); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in;
+    animation: animate1 .5s linear;
+
+}
+
+.win h1{
+    font-weight: bold;
+    font-size: 5em;
+    width: 100%;
+    height: 30%;
+    color: aqua;
+    transition: all .2s ease-in;
+    text-align: center;
+    overflow: hidden;
+}
+.win button{
+outline: none;
+border-radius: 5px;
+border: none;
+background-color: aqua;
+padding: .5rem;
+font-weight: bold;
+font-size: 1em;
+transition: all .5s ease-in-out;
+}
+
+.win p{
+    color: aqua;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    transition: all .5s ease-in-out;
+
+}
 }
