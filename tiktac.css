@@ -208,11 +208,11 @@ transition: all .5s ease-in-out;
     border: 1px solid aqua;
     height: 85%;
     width: 100%;
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
     margin-top: .5rem;
     padding: 3px;
     border-radius: 5px;
-    overflow-x: auto;
     }
     .game div{
     border:1px solid aqua;
